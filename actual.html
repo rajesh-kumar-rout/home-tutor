@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Tutor</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #navbarContent{
+            clip-path: none;
+        }
+        @media (max-width: 800px) {
+            #navbarContent{
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+            #navbarContent.open {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg h-16 px-3">
+        <div class="h-full max-w-7xl mx-auto flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-gray-800">Home Tutoring Services</h2>
+                <ul class="absolute lg:static left-0 right-0 top-16 z-20 shadow-lg lg:shadow-none flex flex-col lg:flex-row gap-6 bg-white px-3 pb-3 lg:p-0 transition-all duration-300" id="navbarContent">
+                    <li>
+                        <a href="#home" class="text-gray-800 hover:text-blue-500">Home</a>
+                    </li>
+                    <li>
+                        <a href="#faculty" class="text-gray-800 hover:text-blue-500">About</a>
+                    </li>
+                    <li>
+                        <a href="#faculty" class="text-gray-800 hover:text-blue-500">Faculty</a>
+                    </li>
+                    <li>
+                        <a href="#testimonials" class="text-gray-800 hover:text-blue-500">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="#enquiry" class="text-gray-800 hover:text-blue-500">Enquiry</a>
+                    </li>
+                    <li>
+                        <a href="#enquiry" class="text-gray-800 hover:text-blue-500">Contact</a>
+                    </li>
+                </ul>
+                <svg id="hamMenu" class="lg:hidden w-6 h-6 text-gray-800 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="relative bg-blue-600 py-20">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col items-center justify-center text-center text-white">
+                <h1 class="text-2xl md:text-3xl font-bold leading-tight mb-4">Personalized Home Tutoring Services<br>In Bhubaneswar, Odisha</h1>
+                <p class="text-lg mb-8">Empowering students through customized tutoring programs. Achieve academic success with expert guidance.</p>
+                <a href="#enquire" class="bg-white text-blue-500 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-400 transition duration-300">Enquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonal Section -->
+    <section id="testimonials" class="bg-gray-100 py-14">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Testimonials</h2>
+            <div class="flex flex-wrap -mx-4">
+                <!-- Testimonial 1 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <p class="text-gray-700 mb-4">"Excellent tutoring service! My child's grades have improved
+                            significantly."</p>
+                        <p class="text-gray-700 font-bold">- Parent</p>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <p class="text-gray-700 mb-4">"The tutor was very knowledgeable and helped me understand complex
+                            concepts."</p>
+                        <p class="text-gray-700 font-bold">- Student</p>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <p class="text-gray-700 mb-4">"Flexible scheduling and great communication with the tutor."</p>
+                        <p class="text-gray-700 font-bold">- Parent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-100 py-14">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Mathematics Tutoring</h3>
+                    <p class="text-gray-700">Personalized math tutoring from elementary to advanced levels.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">Science Tutoring</h3>
+                    <p class="text-gray-700">Expert guidance in physics, chemistry, and biology.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-2">English Language Tutoring</h3>
+                    <p class="text-gray-700">Improvement in reading, writing, and comprehension skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="bg-gray-100 py-14">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Faculty</h2>
+            <div class="flex flex-wrap -mx-3">
+                <!-- Faculty Member 1 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg h-full text-center">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-4" src="https://via.placeholder.com/96"
+                            alt="Faculty 1">
+                        <h3 class="text-xl font-bold mb-2">Dr. Jane Smith</h3>
+                        <p class="text-gray-700 mb-2">Mathematics Expert</p>
+                        <p class="text-gray-600">Ph.D. in Mathematics with over 10 years of teaching experience.
+                            Specializes in high school and college-level math.</p>
+                    </div>
+                </div>
+                <!-- Faculty Member 2 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg h-full text-center">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-4" src="https://via.placeholder.com/96"
+                            alt="Faculty 2">
+                        <h3 class="text-xl font-bold mb-2">Mr. John Doe</h3>
+                        <p class="text-gray-700 mb-2">Science Specialist</p>
+                        <p class="text-gray-600">M.Sc. in Physics with a passion for teaching. Has been mentoring
+                            students in various science subjects for over 8 years.</p>
+                    </div>
+                </div>
+                <!-- Faculty Member 3 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg h-full text-center">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-4" src="https://via.placeholder.com/96"
+                            alt="Faculty 3">
+                        <h3 class="text-xl font-bold mb-2">Ms. Emily Johnson</h3>
+                        <p class="text-gray-700 mb-2">English Language Expert</p>
+                        <p class="text-gray-600">M.A. in English Literature with extensive experience in teaching and
+                            tutoring students of all age groups in English.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="bg-gray-100 py-14">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="flex items-center">
+                    <div class="bg-white rounded-lg p-4 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-500 mb-4 mx-auto" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z" clip-rule="evenodd"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">Our Mission</h3>
+                        <p class="text-gray-700 text-center">To provide personalized tutoring services that empower students.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="flex items-center">
+                    <div class="bg-white rounded-lg p-4 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-500 mb-4 mx-auto" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z" clip-rule="evenodd"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">Our Vision</h3>
+                        <p class="text-gray-700 text-center">To be the leading provider of quality tutoring services in Bhubaneswar, Odisha.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="flex items-center">
+                    <div class="bg-white rounded-lg p-4 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-500 mb-4 mx-auto" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z" clip-rule="evenodd"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">Why Choose Us ?</h3>
+                        <p class="text-gray-700 text-center">We offer experienced tutors, flexible scheduling, and personalized learning plans.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-gray-100 py-14">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white shadow-md rounded-md max-w-4xl mx-auto p-5">
+                    <button
+                        class="faq-question w-full text-left text-xl font-semibold text-gray-800 focus:outline-none flex items-center justify-between">
+                        What subjects do you offer tutoring for ?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                          </svg>
+                          
+                    </button>
+                    
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        <p>We offer tutoring for a wide range of subjects including Mathematics, Science, English,
+                            History, and many more.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white p-5 shadow-md rounded-md max-w-4xl mx-auto">
+                    <button
+                        class="faq-question w-full text-left text-xl font-semibold text-gray-800 focus:outline-none flex items-center justify-between">
+                        How do I schedule a tutoring session ?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                          </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        <p>You can schedule a tutoring session by signing up on our website and selecting the tutor and
+                            time slot that works best for you.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white p-5 shadow-md rounded-md max-w-4xl mx-auto">
+                    <button
+                        class="faq-question w-full text-left text-xl font-semibold text-gray-800 focus:outline-none flex items-center justify-between">
+                        What is the cost of your tutoring services ?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                          </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        <p>The cost varies depending on the subject and the tutor. Please check our pricing page for
+                            detailed information.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-white p-5 shadow-md rounded-md max-w-4xl mx-auto">
+                    <button
+                        class="faq-question w-full text-left text-xl font-semibold text-gray-800 focus:outline-none flex items-center justify-between">
+                        Do you offer online tutoring ?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                          </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        <p>Yes, we offer both in-person and online tutoring to cater to different needs and preferences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquire Section -->
+    <section id="enquire" class="bg-gray-100 py-14">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Enquire Now</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Enquiry Form -->
+                <div class="w-full md:w-2/3 mb-6 md:mb-0 mx-auto">
+                    <form action="#" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-bold mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-bold mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit"
+                                class="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">Submit
+                                Enquiry</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="bg-gray-100 py-14">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Our Journey</h2>
+                <div class="md:w-3/4">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-6 bg-white rounded-md p-5 max-w-3xl mx-auto shadow-md">
+                            <div class="text-4xl text-blue-500 mr-4">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Establishment</h3>
+                                <p class="text-gray-700">Founded in 2010 with a mission to provide quality tutoring services.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-6 bg-white rounded-md p-5 max-w-3xl mx-auto shadow-md">
+                            <div class="text-4xl text-blue-500 mr-4">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Expansion</h3>
+                                <p class="text-gray-700">Grew to serve hundreds of students across Bhubaneswar, Odisha.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-6 bg-white rounded-md p-5 max-w-3xl mx-auto shadow-md">
+                            <div class="text-4xl text-blue-500 mr-4">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Commitment</h3>
+                                <p class="text-gray-700">Continuing to uphold our commitment to educational excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="bg-gray-100 py-14">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="flex flex-wrap justify-center">
+                <!-- Contact Information -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 018 8c0 2.61-1.49 5.27-3.76 7.54a34.63 34.63 0 01-3.22 2.79 1.02 1.02 0 01-1.04 0 34.63 34.63 0 01-3.22-2.79C3.49 15.27 2 12.61 2 10a8 8 0 018-8zM9 12a1 1 0 012 0v1a1 1 0 01-2 0v-1zm2-5a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-lg font-medium mb-2">Email</p>
+                        <p class="text-gray-700 mb-4">support@hometutorbhubaneswar.com</p>
+                    </div>
+                </div>
+                <!-- Phone Number -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 018 8c0 2.61-1.49 5.27-3.76 7.54a34.63 34.63 0 01-3.22 2.79 1.02 1.02 0 01-1.04 0 34.63 34.63 0 01-3.22-2.79C3.49 15.27 2 12.61 2 10a8 8 0 018-8zM9 12a1 1 0 012 0v1a1 1 0 01-2 0v-1zm2-5a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-lg font-medium mb-2">Phone</p>
+                        <p class="text-gray-700 mb-4">+91 9988786544</p>
+                    </div>
+                </div>
+                <!-- Address -->
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 018 8c0 2.61-1.49 5.27-3.76 7.54a34.63 34.63 0 01-3.22 2.79 1.02 1.02 0 01-1.04 0 34.63 34.63 0 01-3.22-2.79C3.49 15.27 2 12.61 2 10a8 8 0 018-8zM9 12a1 1 0 012 0v1a1 1 0 01-2 0v-1zm2-5a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-lg font-medium mb-2">Address</p>
+                        <p class="text-gray-700 mb-4">123 Tutor Street, Bhubaneswar, Odisha, 751001</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hamMenu").click(function(){
+                $("#navbarContent").toggleClass("open")
+            })
+            $('.faq-question').click(function () {
+                $(this).next('.faq-answer').slideToggle();
+                $(this).parent().siblings().find('.faq-answer').slideUp();
+            });
+        });
+    </script>
+</body>
+
+</html>

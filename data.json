@@ -1,0 +1,57 @@
+{
+    "name": "Home Tutoring Services",
+    "title": "Personalized Home Tutoring Services In Bhubaneswar, Odisha",
+    "description": "Empowering students through customized tutoring programs. Achieve academic success with expert guidance.",
+    "contact": {
+        "phone": "9988778877",
+        "email": "rajesh@gmail.com",
+        "address": "Bhubaneswar, Odisha",
+        "facebook": "dd",
+        "instagram": "dd",
+        "twitter": "https:\/\/twitter.com\/rajesh-kumar-rout"
+    },
+    "services": [
+        {
+            "id": 1,
+            "name": "Mathematics Tutoring",
+            "description": "Personalized math tutoring from elementary to advanced levels."
+        },
+        {
+            "id": 2,
+            "name": "Science Tutoring",
+            "description": "Expert guidance in physics, chemistry, and biology."
+        },
+        {
+            "id": 3,
+            "name": "English Language Tutoring",
+            "description": "Improvement in reading, writing, and comprehension skills."
+        }
+    ],
+    "faculties": [
+        {
+            "id": 1,
+            "name": "Dr. Jane Smith",
+            "image": "\/uploads\/1721154775.jpg",
+            "specialist": "Mathematics Expert",
+            "description": "Ph.D. in Mathematics with over 10 years of teaching experience. Specializes in high school and college-level math."
+        }
+    ],
+    "faqs": [
+        {
+            "id": 1,
+            "question": "first",
+            "answer": "DEmo"
+        }
+    ],
+    "journeys": [
+        {
+            "id": 1721158123,
+            "title": "ddddddddddddddd",
+            "description": "ddddddddddddd",
+            "question": null,
+            "answer": null
+        }
+    ],
+    "username": "home_tutors",
+    "password": "dddddd"
+}
