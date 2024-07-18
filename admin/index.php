@@ -1,10 +1,6 @@
 
 
-<?php 
-
-require './header.php' 
-
-?>
+<?php require './header.php' ?>
 
 <div class="w-full md:w-2/3 mb-6 md:mb-0 mx-auto">
     <form 
@@ -12,6 +8,8 @@ require './header.php'
       method="POST" 
       class="bg-white p-8 rounded-lg shadow-lg"
     >
+        <h2 class="mb-6 text-xl font-bold text-center">Edit General</h2>
+
         <div class="mb-4">
             <label for="title" class="block text-gray-700 font-bold mb-2">Name</label>
             <input 
@@ -56,68 +54,4 @@ require './header.php'
     </form>
 </div>
 
-<div class="overflow-x-auto">
-    <table class="min-w-full bg-white border border-gray-300">
-      <thead>
-        <tr>
-          <th class="py-3 px-6 text-left border-b border-gray-300">Name</th>
-          <th class="py-3 px-6 text-left border-b border-gray-300">Age</th>
-          <th class="py-3 px-6 text-left border-b border-gray-300">Occupation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="py-3 px-6 border-b border-gray-300">Alice</td>
-          <td class="py-3 px-6 border-b border-gray-300">28</td>
-          <td class="py-3 px-6 border-b border-gray-300">Engineer</td>
-        </tr>
-        <tr>
-          <td class="py-3 px-6 border-b border-gray-300">Bob</td>
-          <td class="py-3 px-6 border-b border-gray-300">34</td>
-          <td class="py-3 px-6 border-b border-gray-300">Designer</td>
-        </tr>
-        <tr>
-          <td class="py-3 px-6 border-b border-gray-300">Charlie</td>
-          <td class="py-3 px-6 border-b border-gray-300">22</td>
-          <td class="py-3 px-6 border-b border-gray-300">Developer</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-
-  <div class="w-full max-w-4xl mx-auto bg-white shadow-md rounded-lg">
-    <div class="flex justify-between items-center p-4 bg-gray-200 rounded-t-lg">
-      <h2 class="text-xl font-semibold">Users</h2>
-      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none">
-        Add New
-      </button>
-    </div>
-    <table class="min-w-full border-collapse border">
-      <thead>
-        <tr>
-          <th class="py-2 px-4 border">Name</th>
-          <th class="py-2 px-4 border">Age</th>
-          <th class="py-2 px-4 border">Occupation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="py-2 px-4 border">Alice</td>
-          <td class="py-2 px-4 border">28</td>
-          <td class="py-2 px-4 border">Engineer</td>
-        </tr>
-        <tr>
-          <td class="py-2 px-4 border">Bob</td>
-          <td class="py-2 px-4 border">34</td>
-          <td class="py-2 px-4 border">Designer</td>
-        </tr>
-        <tr>
-          <td class="py-2 px-4 border">Charlie</td>
-          <td class="py-2 px-4 border">22</td>
-          <td class="py-2 px-4 border">Developer</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-<?php require ('./footer.php') ?>
+<?php require './footer.php' ?>

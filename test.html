@@ -1,53 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Form Field with jQuery</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable Table Rows</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
-  <div class="max-w-sm w-full bg-white p-4 shadow-md rounded-lg">
-    <!-- Image Preview -->
-    <img id="image-preview" src="https://via.placeholder.com/150" class="mt-1 mb-4 w-24 h-24 object-cover rounded-md">
+<body>
+    <table id="sortable-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Apples</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Oranges</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Bananas</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+    </table>
 
-
-    <!-- Remove and Change Options -->
-    <div class="flex items-center gap-3">
-      <!-- Remove Button -->
-      <button id="remove-image" type="button" class="px-3 py-1.5 text-sm font-semibold bg-red-500 text-white rounded hover:bg-red-600">Remove</button>
-      
-      <!-- Change Button -->
-      <label for="image" class="px-4 py-1.5 text-sm font-semibold bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600">Change</label>
-      <input type="file" id="image" name="image" class="hidden">
-    </div>
-  </div>
-
-  <script>
-    // jQuery to handle image selection and removal interactions
-    $(document).ready(function() {
-      const imageInput = $('#image');
-      const imagePreview = $('#image-preview');
-
-      // Handle image preview on file selection
-      imageInput.on('change', function() {
-        const file = this.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = function(e) {
-            imagePreview.attr('src', e.target.result);
-          }
-          reader.readAsDataURL(file);
-        }
-      });
-
-      // Handle image removal
-      $('#remove-image').on('click', function() {
-        imagePreview.attr('src', 'https://via.placeholder.com/150'); // Placeholder URL or empty image
-        imageInput.val(''); // Clear the file input
-      });
-    });
-  </script>
+    <script>
+        $(document).ready(function(){
+            var el = document.getElementById('sortable-table').getElementsByTagName('tbody')[0];
+            Sortable.create(el, {
+                animation: 150,
+                onEnd: function (/**Event*/evt) {
+                    console.log('Item moved from ' + evt.oldIndex + ' to ' + evt.newIndex);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

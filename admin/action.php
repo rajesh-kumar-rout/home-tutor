@@ -23,6 +23,9 @@ if($action === 'delete_service') {
     file_put_contents('../data.json', json_encode($data));
 
     header('Location: /admin/services.php');
+} else if($action === 'reorder_services') {
+    $data['services'] = $_POST['services'];
+    file_put_contents('../data.json', json_encode($data));
 } else if($action === 'save_service') {
     $data['services'][] = [
         'id' => time(),
@@ -43,7 +46,13 @@ if($action === 'delete_service') {
     header('Location: /admin/index.php');
 } else if($action === 'delete_faculty') {
     $data['faculties'] = array_filter($data['faculties'], function($faculty){
-        return $faculty['id'] != $_GET['faculty_id'];
+        if($faculty['id'] == $_GET['faculty_id']) {
+            if(file_exists("../{$faculty['image']}")) {
+                unlink("../{$faculty['image']}");
+            }
+            return false;
+        }
+        return true;
     });
 
     file_put_contents('../data.json', json_encode($data));
@@ -70,6 +79,9 @@ if($action === 'delete_service') {
     header('Location: /admin/faculties.php');
 } else if($action === 'edit_faculty') {
     if($_FILES['image']['size'] > 0) {
+        if(file_exists("../{$faculty['image']}")) {
+            unlink("../{$faculty['image']}");
+        }
         $destination = "/uploads/" . time() . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
         move_uploaded_file($_FILES['image']['tmp_name'], "..$destination");
     } else if($_POST['reset_image'] === 'true') {
@@ -89,6 +101,9 @@ if($action === 'delete_service') {
     file_put_contents('../data.json', json_encode($data));
 
     header('Location: /admin/faculties.php');
+} else if($action == "reorder_faculties") {
+    $data['faculties'] = $_POST['faculties'];
+    file_put_contents('../data.json', json_encode($data));
 } else if($action == 'edit_contact') {
     $data['contact']['phone'] = $_POST['phone'];
     $data['contact']['email'] = $_POST['email'];
@@ -130,6 +145,9 @@ if($action === 'delete_service') {
     file_put_contents('../data.json', json_encode($data));
 
     header('Location: /admin/faqs.php');
+} else if($action == "reorder_faqs") {
+    $data['faqs'] = $_POST['faqs'];
+    file_put_contents('../data.json', json_encode($data));
 } else if($action == 'edit_journey') {
     $data['journeys'] = array_map(function($journey){
         if($journey['id'] == $_GET['journey_id']) {
@@ -142,6 +160,9 @@ if($action === 'delete_service') {
     file_put_contents('../data.json', json_encode($data));
 
     header('Location: /admin/journeys.php');
+} else if($action === 'reorder_journeys') {
+    $data['journeys'] = $_POST['journeys'];
+    file_put_contents('../data.json', json_encode($data));
 } else if($action == 'delete_journey') {
     $data['journeys'] = array_filter($data['journeys'], function($journey){
         return $journey['id'] != $_GET['journey_id'];
@@ -184,4 +205,37 @@ if($action === 'delete_service') {
 
     $_SESSION['is_logged_in'] = false;
     die("<script>window.location.href='/admin/login.php'</script>");
+} else if($action === 'save_about') {
+    $data['abouts'][] = [
+        'id' => time(),
+        'title' => $_POST['title'],
+        'description' => $_POST['description'],
+    ];
+
+    file_put_contents('../data.json', json_encode($data));
+
+    header('Location: /admin/abouts.php');
+} else if($action === 'delete_about') {
+    $data['abouts'] = array_filter($data['abouts'], function($about){
+        return $about['id'] != $_GET['about_id'];
+    });
+
+    file_put_contents('../data.json', json_encode($data));
+
+    header('Location: /admin/abouts.php');
+} else if($action === 'edit_about') {
+    $data['abouts'] = array_map(function($about){
+        if($about['id'] == $_GET['about_id']) {
+            $about['title'] = $_POST['title'];
+            $about['description'] = $_POST['description'];
+        }
+        return $about;
+    }, $data['abouts']);
+
+    file_put_contents('../data.json', json_encode($data));
+
+    header('Location: /admin/abouts.php');
+}  else if($action === 'reorder_abouts') {
+    $data['abouts'] = $_POST['abouts'];
+    file_put_contents('../data.json', json_encode($data));
 }

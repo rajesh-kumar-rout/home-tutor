@@ -24,7 +24,7 @@ if(empty($_GET['service_id']) === false)
         method="POST" 
         class="bg-white p-8 rounded-lg shadow-lg"
     >
-        <h2 class="mb-6 text-xl font-bold text-center"><?= isset($service) ? "Create New Service" : "Edit Service" ?></h2>
+        <h2 class="mb-6 text-xl font-bold text-center"><?= isset($service) ?  "Edit Service" : "Create New Service" ?></h2>
 
         <div class="mb-4">
             <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>

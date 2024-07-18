@@ -1,11 +1,20 @@
-<?php require ('./header.php') ?>
+<?php 
+
+require './header.php'; 
+
+$abouts = $data['abouts'];
+
+?>
 
 <div class="flex items-center justify-between mb-4">
     <h1 class="font-bold text-xl">About</h1>
 
-    <button type="submit"
-        class="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
-        Add New</button>
+    <a 
+        href="/admin/about.php"
+        class="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+    >
+        Add New
+    </a>
 </div>
 
 <div class="overflow-x-auto">
@@ -19,77 +28,57 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="py-3 px-6 border-b border-gray-300">
-                    <i class="bi bi-list cursor-pointer"></i>
-                </td>
-                <td class="py-3 px-6 border-b border-gray-300 whitespace-nowrap">Our Mission</td>
+            <?php foreach($abouts as $about): ?>
+                <tr>
+                    <td class="py-3 px-6 border-b border-gray-300">
+                        <i class="bi bi-list cursor-pointer"></i>
+                    </td>
 
-                <td class="py-3 px-6 border-b border-gray-300">To provide personalized tutoring services that empower students.</td>
-                <td class="py-3 px-6 border-b border-gray-300">
-                    <div class="flex gap-3">
-                        <!-- Delete Button -->
-                        <button
-                            class="bg-red-500 text-white rounded-full flex items-center justify-center h-8 w-8 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
-                            <i class="bi bi-trash-fill text-sm"></i>
-                        </button>
+                    <td class="py-3 px-6 border-b border-gray-300 whitespace-nowrap"><?= $about['title'] ?></td>
 
-                        <!-- Edit Button -->
-                        <button
-                            class="bg-blue-500 text-white rounded-full flex items-center justify-center h-8 w-8 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-                            <i class="bi bi-pencil-fill text-sm"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="py-3 px-6 border-b border-gray-300">
-                    <i class="bi bi-list cursor-pointer"></i>
-                </td>
-                <td class="py-3 px-6 border-b border-gray-300 whitespace-nowrap">Our Vision</td>
+                    <td class="py-3 px-6 border-b border-gray-300"><?= $about['description'] ?></td>
 
-                <td class="py-3 px-6 border-b border-gray-300">To be the leading provider of quality tutoring services in Bhubaneswar, Odisha.</td>
-                <td class="py-3 px-6 border-b border-gray-300">
-                    <div class="flex gap-3">
-                        <!-- Delete Button -->
-                        <button
-                            class="bg-red-500 text-white rounded-full flex items-center justify-center h-8 w-8 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
-                            <i class="bi bi-trash-fill text-sm"></i>
-                        </button>
+                    <td class="py-3 px-6 border-b border-gray-300">
+                        <div class="flex gap-3">
+                            <a
+                                href="/admin/action.php?action=delete_about&about_id=<?= $about['id'] ?>"
+                                class="bg-red-500 text-white rounded-full flex items-center justify-center h-8 w-8 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75"
+                            >
+                                <i class="bi bi-trash-fill text-sm"></i>
+                            </a>
 
-                        <!-- Edit Button -->
-                        <button
-                            class="bg-blue-500 text-white rounded-full flex items-center justify-center h-8 w-8 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-                            <i class="bi bi-pencil-fill text-sm"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="py-3 px-6 border-b border-gray-300">
-                    <i class="bi bi-list cursor-pointer"></i>
-                </td>
-                <td class="py-3 px-6 border-b border-gray-300 whitespace-nowrap">Why Choose Us ?</td>
-
-                <td class="py-3 px-6 border-b border-gray-300">We offer experienced tutors, flexible scheduling, and personalized learning plans.</td>
-                <td class="py-3 px-6 border-b border-gray-300">
-                    <div class="flex gap-3">
-                        <!-- Delete Button -->
-                        <button
-                            class="bg-red-500 text-white rounded-full flex items-center justify-center h-8 w-8 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
-                            <i class="bi bi-trash-fill text-sm"></i>
-                        </button>
-
-                        <!-- Edit Button -->
-                        <button
-                            class="bg-blue-500 text-white rounded-full flex items-center justify-center h-8 w-8 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-                            <i class="bi bi-pencil-fill text-sm"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
+                            <a
+                                href="/admin/about.php?about_id=<?= $about['id'] ?>"
+                                class="bg-blue-500 text-white rounded-full flex items-center justify-center h-8 w-8 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                            >
+                                <i class="bi bi-pencil-fill text-sm"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            <?php endforeach ?>
         </tbody>
     </table>
 </div>
 
-<?php require ('./footer.php') ?>
+<script>
+    Sortable.create($("table tbody")[0], {
+        animation: 150,
+        onEnd: function () {
+            const abouts = new FormData()
+
+            $("tbody tr").each(function (index) {
+                abouts.append(`abouts[${index}][title]`, $(this).find("td").eq(1).text())
+                abouts.append(`abouts[${index}][description]`, $(this).find("td").eq(2).text())
+                abouts.append(`abouts[${index}][id]`, new URLSearchParams($(this).find("td").eq(3).find("a").attr("href").split("?")[1]).get("about_id"))
+            })
+
+            fetch("/admin/action.php?action=reorder_abouts", {
+                method: "POST",
+                body: abouts
+            })
+        }
+    })
+</script>
+
+<?php require './footer.php' ?>

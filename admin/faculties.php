@@ -18,7 +18,7 @@ $faculties = $data['faculties'];
 </div>
 
 <div class="overflow-x-auto">
-    <table class="min-w-full bg-white border border-gray-300">
+    <table class="min-w-full bg-white border border-gray-300 sortable">
         <thead>
             <tr>
                 <th class="py-3 px-6 text-left border-b border-gray-300">Reorder</th>
@@ -68,5 +68,27 @@ $faculties = $data['faculties'];
         </tbody>
     </table>
 </div>
+
+<script>
+    Sortable.create($("table tbody")[0], {
+        animation: 150,
+        onEnd: function () {
+            const faculties = new FormData()
+
+            $("tbody tr").each(function (index) {
+                faculties.append(`faculties[${index}][name]`, $(this).find("td").eq(1).text())
+                faculties.append(`faculties[${index}][image]`, $(this).find("td").eq(2).find("img").attr("src"))
+                faculties.append(`faculties[${index}][specialist]`, $(this).find("td").eq(3).text())
+                faculties.append(`faculties[${index}][description]`, $(this).find("td").eq(4).text())
+                faculties.append(`faculties[${index}][id]`, new URLSearchParams($(this).find("td").eq(5).find("a").attr("href").split("?")[1]).get("faculty_id"))
+            })
+
+            fetch("/admin/action.php?action=reorder_faculties", {
+                method: "POST",
+                body: faculties
+            })
+        }
+    })
+</script>
 
 <?php require './footer.php' ?>

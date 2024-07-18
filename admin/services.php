@@ -63,4 +63,24 @@ $services = $data['services'];
     </table>
 </div>
 
+<script>
+    Sortable.create($("table tbody")[0], {
+        animation: 150,
+        onEnd: function () {
+            const services = new FormData()
+
+            $("tbody tr").each(function (index) {
+                services.append(`services[${index}][name]`, $(this).find("td").eq(1).text())
+                services.append(`services[${index}][description]`, $(this).find("td").eq(2).text())
+                services.append(`services[${index}][id]`, new URLSearchParams($(this).find("td").eq(3).find("a").attr("href").split("?")[1]).get("service_id"))
+            })
+
+            fetch("/admin/action.php?action=reorder_services", {
+                method: "POST",
+                body: services
+            })
+        }
+    })
+</script>
+
 <?php require './footer.php' ?>

@@ -24,7 +24,7 @@ if(empty($_GET['journey_id']) === false)
         method="POST" 
         class="bg-white p-8 rounded-lg shadow-lg"
     >
-        <h2 class="mb-6 text-xl font-bold text-center"><?= isset($journey) ? "Create New Journey" : "Edit Journey" ?></h2>
+        <h2 class="mb-6 text-xl font-bold text-center"><?= isset($journey) ?  "Edit Journey" : "Create New Journey" ?></h2>
 
         <div class="mb-4">
             <label for="title" class="block text-gray-700 font-bold mb-2">Title</label>

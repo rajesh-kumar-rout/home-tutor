@@ -8,7 +8,7 @@ $contact = $data['contact'];
 
 <div class="w-full md:w-2/3 mb-6 md:mb-0 mx-auto">
     <form action="/admin/action.php?action=edit_contact" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
-        <h2 class="mb-6 text-xl font-bold text-center">Edit Contact Information</h2>
+        <h2 class="mb-6 text-xl font-bold text-center">Edit Contact</h2>
 
         <div class="mb-4">
             <label for="phone" class="block text-gray-700 font-bold mb-2">Phone</label>

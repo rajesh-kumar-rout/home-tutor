@@ -61,4 +61,24 @@ $journeys = $data['journeys'];
     </table>
 </div>
 
+<script>
+    Sortable.create($("table tbody")[0], {
+        animation: 150,
+        onEnd: function () {
+            const journeys = new FormData()
+
+            $("tbody tr").each(function (index) {
+                journeys.append(`journeys[${index}][title]`, $(this).find("td").eq(1).text())
+                journeys.append(`journeys[${index}][description]`, $(this).find("td").eq(2).text())
+                journeys.append(`journeys[${index}][id]`, new URLSearchParams($(this).find("td").eq(3).find("a").attr("href").split("?")[1]).get("journey_id"))
+            })
+
+            fetch("/admin/action.php?action=reorder_journeys", {
+                method: "POST",
+                body: journeys
+            })
+        }
+    })
+</script>
+
 <?php require './footer.php' ?>
